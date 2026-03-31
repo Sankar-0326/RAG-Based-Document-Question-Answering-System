@@ -1,7 +1,7 @@
-from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
+from langchain_ollama import ChatOllama
 
 def format_docs(docs):
     """
@@ -18,8 +18,7 @@ def create_rag_chain(vectordb):
     
     retriever = vectordb.as_retriever(search_kwargs={"k": 3})
 
-    llm = ChatOpenAI(model="gpt-4o-mini")
-
+    llm = ChatOllama(model= "wizardlm2:7b ")
 
     prompt = ChatPromptTemplate.from_template(
         """

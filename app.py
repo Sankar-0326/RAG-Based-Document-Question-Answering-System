@@ -1,5 +1,4 @@
 from contextlib import asynccontextmanager
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -9,7 +8,6 @@ from src.embeddings import get_embeddings
 from src.vectordb import create_vector_store, load_vector_store
 from src.rag_chain import create_rag_chain
 
-load_dotenv()
 
 rag_chain = None
 
